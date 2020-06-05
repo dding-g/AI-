@@ -1,12 +1,18 @@
 ## Normal한 심장음과 Not Normal 한 심장음의 Classification
 
-![조명근 - 기말보고서_1](./보고서/조명근 - 기말보고서_1.png)
+![report](./보고서/report1.png)
 
-![조명근 - 기말보고서_1](./보고서/조명근 - 기말보고서_2.png)
+![report](./보고서/report2.png)
 
-![조명근 - 기말보고서_1](./보고서/조명근 - 기말보고서_3.png)
+![report](./보고서/report3.png)
 
-![조명근 - 기말보고서_1](./보고서/조명근 - 기말보고서_4.png)
+![report](./보고서/report4.png)
+
+
+
+
+
+
 
 
 
