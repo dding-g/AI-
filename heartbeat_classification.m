@@ -4,17 +4,16 @@ clear all;
 % test_accuracy가 제일 높은 모델이 가장 좋은 모델이다.
 
 % Xtrain, Xtest, Ytrain, ytest 가져오기
-load('heartbeat_TrainTestData.mat');
+load('./dataset_process/dataset/heartbeat_TrainTestData.mat');
 
 % number of classes
-k=3;
+k=2;
 
 
 % data를 보기위한 함수 및 준비
 %sel = randperm(size(Xtrain, 1));
 %sel = sel(1:100);
 %displayData(Xtrain(sel, :)); 
-
 
 m_train = size(Xtrain,1); % train 과 test의 크기가 다름
 m_test = size(Xtest,1);
@@ -25,8 +24,8 @@ Xtest =[ones(m_test,1) Xtest];
 n = size(Xtrain,2);
 
 %compute cost and gradient
-iter=400; % Number of epoch
-  
+iter=30; % Number of epoch
+
 % Initial weights
 % 이렇게 하면 매번 초기값이 바뀌기 때문에 더 좋은 세타를 만날 수도 있다.
 theta=0.01*randn(n,k); 
@@ -49,7 +48,6 @@ for epoch=1:iter
   epoch
   %[th(:,:,epoch), train_accuracy(epoch), train_loss(epoch)]=MLR_SGD(theta, Xtrain, Ytrain, alpha); % Cost funtion
   [th(:,:,epoch), train_accuracy(epoch), train_loss(epoch)]=MLR_SGD_reg(theta, Xtrain, Ytrain, alpha, lambda); % Cost funtion
-  
   [ypred(:,epoch), test_accuracy(epoch), test_loss(epoch)]=MLR_test(Xtest, Ytest, th(:,:,epoch));
   theta = th(:,:,epoch);
 endfor

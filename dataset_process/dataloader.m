@@ -6,20 +6,20 @@ close all;
 t = cputime;
 fprintf('Loading and Visualizing Data\n')
 
-load('normal_heartbeat_dataset.mat');
-load('murmur_heartbeat_dataset.mat');
-load('extrastole_heartbeat_dataset.mat');
+load('./dataset/normal_heartbeat_dataset.mat');
+load('./dataset/murmur_heartbeat_dataset.mat');
+load('./dataset/extrastole_heartbeat_dataset.mat');
 
 
-Xtrain = [normal_dataset(:, 1:180).'; murmur_dataset(:, 1:40).'; extrastole_dataset(:, 1:30).'];
-Xtest = [normal_dataset(:, 181:223).'; murmur_dataset(:, 41:68).'; extrastole_dataset(:, 31:48).'];
+Xtrain = [normal_dataset(:, 1:80).'; murmur_dataset(:, 1:35).'; extrastole_dataset(:, 1:25).'];
+Xtest = [normal_dataset(:, 81:115).'; murmur_dataset(:, 36:55).'; extrastole_dataset(:, 26:37).'];
 
+% 0 : not normal
 % 1 : normal
-% 2 : murmur
-% 3 : extrastole
+% one-hot encoding
 
-Ytrain = [ones(180, 1) ; ones(40,1)*2; ones(30,1)*3;];
-Ytest = [ones(43, 1); ones(28,1)*2; ones(18,1)*3;];
+Ytrain = [ones(80, 1) ; ones(60 ,1)*2;];
+Ytest = [ones(35, 1); ones(32,1)*2;];
 
-save 'heartbeat_TrainTestData.mat' Xtrain Xtest Ytrain Ytest
+save './dataset/heartbeat_TrainTestData.mat' Xtrain Xtest Ytrain Ytest
 fprintf('Save complete : heartbeat_TrainTestData.mat\n')
