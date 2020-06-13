@@ -24,8 +24,9 @@ theta=zeros(size(Xtrain,2),1); % Initial weights
 
 alpha=0.01 % Learning rate
 
-th=LR_SGD(theta, Xtrain, Ytrain, alpha, iter, tol); % Cost funtion
+[th, train_loss, train_accuracy]=LR_SGD(theta, Xtrain, Ytrain, alpha, iter, tol); % Cost funtion
 th
+
 linear_h=[ones(size(Xtest,1),1) Xtest]*th; %target prediction
  
 % probability calculation

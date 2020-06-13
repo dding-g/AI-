@@ -18,8 +18,8 @@ Xtest = [normal_dataset(:, 81:115).'; murmur_dataset(:, 36:55).'; extrastole_dat
 % 1 : normal
 % one-hot encoding
 
-Ytrain = [ones(80, 1) ; ones(60 ,1)*2;];
-Ytest = [ones(35, 1); ones(32,1)*2;];
+Ytrain = [ones(80, 1) ; zeros(60 ,1);];
+Ytest = [ones(35, 1); zeros(32,1);];
 
 save './dataset/heartbeat_TrainTestData.mat' Xtrain Xtest Ytrain Ytest
 fprintf('Save complete : heartbeat_TrainTestData.mat\n')
