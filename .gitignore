@@ -1,2 +1,2 @@
 heartbeat
-dataset_process/heartbeat
+dataset_process/heartbeat/**/.wav
