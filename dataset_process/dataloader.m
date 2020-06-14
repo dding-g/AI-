@@ -15,20 +15,13 @@ load('./dataset/extrastole_heartbeat_dataset.mat');
 %extrastole_dataset = extrastole_dataset(:, randperm(size(normal_dataset, 2)));
 
 Xtrain = [normal_dataset(:, 1:184).'; murmur_dataset(:, 1:80).'; extrastole_dataset(:, 1:52).'];
-Xtest = [normal_dataset(:, 184:231).'; murmur_dataset(:, 81:100).'; extrastole_dataset(:, 52:65).'];
+Xtest = [normal_dataset(:, 185:231).'; murmur_dataset(:, 81:100).'; extrastole_dataset(:, 53:65).'];
 
 % 1 : normal
-<<<<<<< HEAD
-% one-hot encoding
-
-Ytrain = [ones(80, 1) ; zeros(60 ,1);];
-Ytest = [ones(35, 1); zeros(32,1);];
-=======
 % 2 : murmur
 % 3 : extrastole
 Ytrain = [ones(184, 1) ; ones(80 ,1)*2; ones(52 ,1)*3;];
-Ytest = [ones(48, 1); ones(20,1)*2; ones(14,1)*3;];
->>>>>>> 65f1029f4280c04d369504a6f8d9efa1ad64f3b1
+Ytest = [ones(47, 1); ones(20,1)*2; ones(13,1)*3;];
 
 save './dataset/heartbeat_TrainTestData.mat' Xtrain Xtest Ytrain Ytest
 fprintf('Save complete : heartbeat_TrainTestData.mat\n')

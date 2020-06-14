@@ -6,8 +6,8 @@ clear all;
 % Xtrain, Xtest, Ytrain, ytest 가져오기
 load('./dataset_process/dataset/heartbeat_TrainTestData.mat');
 
-% number of classes
-k=2;
+% number of classes 
+k=3;
 
 
 % data를 보기위한 함수 및 준비
@@ -21,18 +21,18 @@ m_test = size(Xtest,1);
 Xtrain=[ones(m_train,1) Xtrain]; % Bias를 포함하기 위해서 1을 추가
 Xtest =[ones(m_test,1) Xtest];
 
-n = size(Xtrain,2);
+n = size(Xtrain,2); 
 
 %compute cost and gradient
-iter=30; % Number of epoch
+iter=500; % Number of epoch
 
 % Initial weights
 % 이렇게 하면 매번 초기값이 바뀌기 때문에 더 좋은 세타를 만날 수도 있다.
 theta=0.01*randn(n,k); 
 % Learning rate
-alpha=1e-4 % alpha 가 작아지면 정확도는 높아지나, epoch을 더 높여줘야한다. 학습 속도가 느리기 때문
+alpha=1e-5 % alpha 가 작아지면 정확도는 높아지나, epoch을 더 높여줘야한다. 학습 속도가 느리기 때문
 % Regularization coefficient
-lambda=0.5; 
+lambda=0; 
 
 % to save optimized thetas
 th=zeros(n,k,iter); % 이렇게 하면 3차원 (1,2) 이렇게 하면 2차원

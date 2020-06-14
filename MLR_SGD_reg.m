@@ -10,6 +10,7 @@ for i=1:m
   py_x = softmax(z);
   th(:,1)=th(:,1) - (alpha)*((py_x(1)-(Ytrain(i)==1))*Xtrain(i,:)'+lambda*th(:,1)); %MLR_SGD에서 lambda값만 더해줌
   th(:,2)=th(:,2) - (alpha)*((py_x(2)-(Ytrain(i)==2))*Xtrain(i,:)'+lambda*th(:,2));
+  th(:,3)=th(:,3) - (alpha)*((py_x(3)-(Ytrain(i)==3))*Xtrain(i,:)'+lambda*th(:,3));
 end
 
 linear_h=Xtrain*th; %target prediction
