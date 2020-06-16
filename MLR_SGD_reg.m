@@ -25,7 +25,6 @@ for i=1:m
   ypred(i)=maxind;
 end
 
-norm_th = norm(th(:)).^2;
 train_loss = train_loss/m;
 train_accuracy = mean(Ytrain==ypred);
 

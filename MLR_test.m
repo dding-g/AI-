@@ -16,9 +16,9 @@ for i=1:m
   ypred(i)=maxind;
 end
 
-norm_th = norm(theta(:)).^2;
 test_loss = test_loss/m;
 
 test_accuracy = mean(ytest==ypred)
  
 endfunction
+

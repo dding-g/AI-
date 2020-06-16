@@ -30,9 +30,12 @@ iter=120; % Number of epoch
 % 이렇게 하면 매번 초기값이 바뀌기 때문에 더 좋은 세타를 만날 수도 있다.
 theta=0.01*randn(n,k); 
 % Learning rate
-alpha=1e-5 % alpha 가 작아지면 정확도는 높아지나, epoch을 더 높여줘야한다. 학습 속도가 느리기 때문
+% alpha 가 작아지면 정확도는 높아지나, epoch을 더 높여줘야한다. 
+%학습 속도가 느리기 때문
+alpha=1e-5
+
 % Regularization coefficient
-lambda=0.5; 
+lambda=20; 
 
 % to save optimized thetas
 th=zeros(n,k,iter); % 이렇게 하면 3차원 (1,2) 이렇게 하면 2차원
