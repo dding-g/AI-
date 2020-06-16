@@ -173,14 +173,14 @@
 
 11.  Dataload
 
-     1.  ![image-20200616164541006](C:\Users\jmg\AppData\Roaming\Typora\typora-user-images\image-20200616164541006.png)
+     1.  ![image](https://user-images.githubusercontent.com/29707967/84746742-6124c400-aff1-11ea-9e30-098d05f0322d.png)
 
          1.  Data들을 차례대로 불러와 Xtrain, Xtest 에 저장한다.
 
          2.  1, 2, 3의 class를 갖는 데이터들을 저장한다.
      2.  Training and Test
 
-         1.  ![image-20200616162226610](C:\Users\jmg\AppData\Roaming\Typora\typora-user-images\image-20200616162226610.png)
+         1.  ![image](https://user-images.githubusercontent.com/29707967/84746828-77328480-aff1-11ea-9571-72ea0d82abf1.png)
 
              1.  Train, test의 크기가 다르기 때문에 변수에 저장하고 bias를 추가할때 맞는 size를 준다.
 
